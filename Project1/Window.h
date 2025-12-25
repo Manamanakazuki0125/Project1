@@ -15,6 +15,20 @@ public:
 
 	bool MessageLoop();
 
+	static LRESULT CALLBACK MainWindProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
+	void OnResize(UINT width, UINT height);
+
+	HWND    GetWindowHandle() { return hWindow_; }
+
+private:
+
+	WNDCLASS wc_;
+
+	HWND hWindow_ = nullptr;
+
+	SIZE sizeWindow_;
+
+	MSG msg_ = {};
 
 };

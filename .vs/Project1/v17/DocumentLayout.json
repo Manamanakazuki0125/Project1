@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\DX11SideScroleGames\\Project1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,37 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Window.cpp",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Window.cpp",
               "RelativeDocumentMoniker": "Project1\\Window.cpp",
               "ToolTip": "C:\\DX11SideScroleGames\\Project1\\Project1\\Window.cpp",
               "RelativeToolTip": "Project1\\Window.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-24T16:02:50.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Window.h",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Window.h",
               "RelativeDocumentMoniker": "Project1\\Window.h",
               "ToolTip": "C:\\DX11SideScroleGames\\Project1\\Project1\\Window.h",
               "RelativeToolTip": "Project1\\Window.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-12-24T16:01:53.414Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Application.cpp",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Application.cpp",
               "RelativeDocumentMoniker": "Project1\\Application.cpp",
@@ -81,12 +81,11 @@
               "RelativeToolTip": "Project1\\Application.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-24T15:48:56.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T15:48:56.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\main.cpp",
               "RelativeDocumentMoniker": "Project1\\main.cpp",
@@ -94,8 +93,7 @@
               "RelativeToolTip": "Project1\\main.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-24T15:09:28.437Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T15:09:28.437Z"
             }
           ]
         }
