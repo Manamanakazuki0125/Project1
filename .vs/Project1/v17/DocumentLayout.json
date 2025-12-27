@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\DX11SideScroleGames\\Project1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|C:\\DX11SideScroleGames\\Project1\\Project1\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{899E3BF4-EDF2-4AF7-97F5-3403E079CCAE}|Project1\\Project1.vcxproj|solutionrelative:Project1\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -35,19 +43,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Renderer.cpp",
+              "RelativeDocumentMoniker": "Project1\\Renderer.cpp",
+              "ToolTip": "C:\\DX11SideScroleGames\\Project1\\Project1\\Renderer.cpp",
+              "RelativeToolTip": "Project1\\Renderer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-27T17:10:06.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Renderer.h",
+              "RelativeDocumentMoniker": "Project1\\Renderer.h",
+              "ToolTip": "C:\\DX11SideScroleGames\\Project1\\Project1\\Renderer.h",
+              "RelativeToolTip": "Project1\\Renderer.h",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAADkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-27T11:54:32.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Window.cpp",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Window.cpp",
               "RelativeDocumentMoniker": "Project1\\Window.cpp",
               "ToolTip": "C:\\DX11SideScroleGames\\Project1\\Project1\\Window.cpp",
               "RelativeToolTip": "Project1\\Window.cpp",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFoAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-24T16:02:50.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Window.h",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Window.h",
               "RelativeDocumentMoniker": "Project1\\Window.h",
@@ -55,12 +89,11 @@
               "RelativeToolTip": "Project1\\Window.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-24T16:01:53.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T16:01:53.414Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Application.cpp",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Application.cpp",
               "RelativeDocumentMoniker": "Project1\\Application.cpp",
@@ -68,12 +101,11 @@
               "RelativeToolTip": "Project1\\Application.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-24T15:49:11.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T15:49:11.392Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Application.h",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\Application.h",
               "RelativeDocumentMoniker": "Project1\\Application.h",
@@ -85,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\DX11SideScroleGames\\Project1\\Project1\\main.cpp",
               "RelativeDocumentMoniker": "Project1\\main.cpp",
