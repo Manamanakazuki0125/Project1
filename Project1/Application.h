@@ -1,6 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include "Window.h"
+#include "Renderer.h"
 
 class Application
 {
@@ -13,4 +14,6 @@ private:
 	bool gameloop();
 private:
 	Window window_;
+
+	Renderer renderer_;
 };

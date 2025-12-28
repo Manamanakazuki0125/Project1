@@ -2,7 +2,10 @@
 
 void Application::Initialize(HINSTANCE hInst)
 {
+	renderer_.Initialize(window_.GetWindowHandle());
 	window_.Initialize(hInst);
+	
+	
 }
 
 void Application::Loop()
@@ -18,10 +21,16 @@ void Application::Loop()
 
 void Application::Terminate()
 {
+	renderer_.Terminate();
 	window_.Terminate();
+
 }
 
 bool Application::gameloop()
 {
+	renderer_.Draw();
+
+	renderer_.Swap();
+
 	return true;
 }

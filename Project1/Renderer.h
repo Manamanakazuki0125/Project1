@@ -37,15 +37,18 @@ private:
 	//! デバイス作成時に返される機能レベル
 	D3D_FEATURE_LEVEL featureLevelsSupported_;
 
+
+	//↓　initDeviceAndSwapChain(HWND hWindow)で以下が取得される
 	//!デバイス
 	ID3D11Device* pD3DDevice_ = nullptr;
 
 	//!デバイスコンテキスト
 	ID3D11DeviceContext* pImmediateContext_ = nullptr;
-
+	
 	//!スワップチェイン
 	IDXGISwapChain* pSwapChain_ = nullptr;
 
+	//↑　ここまでが取得される。
 
 	//!描画ターゲット・ビュー
 	ID3D11RenderTargetView* pRenderTargetView_ = nullptr;
@@ -53,7 +56,7 @@ private:
 	//!ビューポート
 	D3D11_VIEWPORT viewPort_[1];
 
-	UINT    backBufferNum_ = 3;
+	UINT    backBufferNum_ = 1;
 	UINT    screenWidth_ = 0;
 	UINT    screenHeight_ = 0;
 };
