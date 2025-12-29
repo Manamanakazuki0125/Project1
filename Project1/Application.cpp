@@ -2,8 +2,9 @@
 
 void Application::Initialize(HINSTANCE hInst)
 {
-	renderer_.Initialize(window_.GetWindowHandle());
+	
 	window_.Initialize(hInst);
+	renderer_.Initialize(window_.GetWindowHandle());
 	
 	
 }

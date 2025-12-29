@@ -1,5 +1,5 @@
 #pragma once
-
+#include "shader.h"
 #include <d3d11.h>
 #pragma comment(lib,"d3d11.lib")
 //マクロ定義
@@ -20,6 +20,7 @@ public:
 
 	void Swap();
 
+
 	ID3D11Device* GetDevice() { return pD3DDevice_; }
 	ID3D11DeviceContext* GetDeviceContext() { return pImmediateContext_; }
 
@@ -30,9 +31,15 @@ private:
 private:
 
 	//! 機能レベルの配列
-	static const UINT FEATURE_LEVELS_NUM = 4;
+	static const UINT FEATURE_LEVELS_NUM = 5;
 
-	D3D_FEATURE_LEVEL pFeatureLevels_[FEATURE_LEVELS_NUM] = {};
+	D3D_FEATURE_LEVEL pFeatureLevels_[FEATURE_LEVELS_NUM] = {
+	D3D_FEATURE_LEVEL_11_0,
+	D3D_FEATURE_LEVEL_10_1,
+	D3D_FEATURE_LEVEL_10_0,
+	D3D_FEATURE_LEVEL_9_3,
+	D3D_FEATURE_LEVEL_9_1,
+	};
 
 	//! デバイス作成時に返される機能レベル
 	D3D_FEATURE_LEVEL featureLevelsSupported_;

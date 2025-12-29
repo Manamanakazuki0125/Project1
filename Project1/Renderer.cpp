@@ -1,4 +1,6 @@
 #include "Renderer.h"
+#include <comdef.h>
+
 
 
 Renderer::Renderer()
@@ -74,8 +76,11 @@ bool Renderer::initDeviceAndSwapChain(HWND hWindow)
             break;
         }
     }
-    if (FAILED(hr)) return false;
-
+    if (FAILED(hr)) {
+        _com_error err(hr);
+        OutputDebugString(err.ErrorMessage());
+        return false;
+    }
     return true;
 }
 
@@ -162,3 +167,4 @@ void Renderer::Terminate()
     DX_SAFE_RELEASE(pImmediateContext_);
     DX_SAFE_RELEASE(pD3DDevice_);
 }
+
