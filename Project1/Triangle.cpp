@@ -38,5 +38,9 @@ bool Triangle::CreateVertexBuffer(Renderer& renderer)
 
 void Triangle::Draw(Renderer& renderer)
 {
-    // Œãq
+    auto pDeviceContext = renderer.GetDeviceContext();
+    uint32_t strides[1] = { sizeof(Vertex) };
+    uint32_t offsets[1] = { 0 };
+    pDeviceContext->IASetVertexBuffers(0, 1, &VertexBuffer, strides, offsets);
+    pDeviceContext->Draw(VERTEX_NUM, 0);
 }

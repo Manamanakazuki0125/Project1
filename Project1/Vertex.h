@@ -1,8 +1,10 @@
 #pragma once
 
+
 //1頂点を持たせる構造体
-struct Vertex {
-    DirectX::XMFLOAT3    Position = {};
+struct Vertex
+{
+    DirectX::XMFLOAT3   Position = {};
 
     //デフォルトコンストラクタ
     Vertex() {}

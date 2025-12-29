@@ -1,4 +1,5 @@
 #pragma once
+#include "Vertex.h"
 
 struct Triangle {
     static constexpr size_t VERTEX_NUM = 3;

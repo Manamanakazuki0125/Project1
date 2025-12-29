@@ -1,22 +1,7 @@
-﻿  pch.cpp
-C:\DX11SideScroleGames\Project1\Project1\Vertex.h(5,5): error C2653: 'DirectX': 識別子がクラス名でも名前空間名でもありません。
-  (ソース ファイル 'pch.cpp' をコンパイルしています)
+﻿  Renderer.cpp
+C:\DX11SideScroleGames\Project1\Project1\Renderer.h(8,9): warning C4005: 'DX_SAFE_RELEASE': マクロが再定義されました。
+  (ソース ファイル '/Renderer.cpp' をコンパイルしています)
+      C:\DX11SideScroleGames\Project1\Project1\pch.h(6,9):
+      'DX_SAFE_RELEASE' の以前の定義を確認してください
   
-C:\DX11SideScroleGames\Project1\Project1\Vertex.h(5,26): error C3646: 'Position': 不明なオーバーライド指定子です
-  (ソース ファイル 'pch.cpp' をコンパイルしています)
-  
-C:\DX11SideScroleGames\Project1\Project1\Vertex.h(5,35): error C2059: 構文エラー: '='
-  (ソース ファイル 'pch.cpp' をコンパイルしています)
-  
-C:\DX11SideScroleGames\Project1\Project1\Vertex.h(5,37): error C2334: '{' の前に予期しないトークンがありました。関数の本体は無視されます
-  (ソース ファイル 'pch.cpp' をコンパイルしています)
-  
-C:\DX11SideScroleGames\Project1\Project1\Vertex.h(12,9): error C2065: 'Position': 定義されていない識別子です。
-  (ソース ファイル 'pch.cpp' をコンパイルしています)
-  
-C:\DX11SideScroleGames\Project1\Project1\Vertex.h(13,9): error C2065: 'Position': 定義されていない識別子です。
-  (ソース ファイル 'pch.cpp' をコンパイルしています)
-  
-C:\DX11SideScroleGames\Project1\Project1\Vertex.h(14,9): error C2065: 'Position': 定義されていない識別子です。
-  (ソース ファイル 'pch.cpp' をコンパイルしています)
-  
+  Project1.vcxproj -> C:\DX11SideScroleGames\Project1\x64\Debug\Project1.exe

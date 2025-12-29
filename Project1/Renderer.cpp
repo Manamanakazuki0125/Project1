@@ -1,5 +1,6 @@
 #include "Renderer.h"
 #include <comdef.h>
+#include <d3dcompiler.h>
 
 
 
@@ -125,6 +126,8 @@ bool Renderer::initBackBuffer()
     viewPort_[0].MaxDepth = 1.0f; // ビューポート領域の深度値の最大値
     pImmediateContext_->RSSetViewports(1, &viewPort_[0]);
 
+    CompileShader(L"VertexShader.hlsl", L"PixelShader.hlsl", defaultShader_);
+
     return true;
 
 
@@ -136,9 +139,17 @@ void Renderer::Draw()
 {
     if (!pImmediateContext_ || !pRenderTargetView_) return;
 
-    // 青でクリア
-    float color[] = { 0.f, 0.f, 1.f, 0.f };
+    pImmediateContext_->OMSetRenderTargets(1, &pRenderTargetView_, nullptr);
+
+    float color[] = { 0.f, 0.f, 0.f, 0.f };
     pImmediateContext_->ClearRenderTargetView(pRenderTargetView_, color);
+
+    pImmediateContext_->IASetInputLayout(defaultShader_.pInputLayout);
+    pImmediateContext_->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    pImmediateContext_->VSSetShader(defaultShader_.pVertexShader, nullptr, 0);
+    pImmediateContext_->PSSetShader(defaultShader_.pPixelShader, nullptr, 0);
+
+    sampleTriangle_.Draw(*this);
 }
 
 
@@ -166,5 +177,81 @@ void Renderer::Terminate()
 
     DX_SAFE_RELEASE(pImmediateContext_);
     DX_SAFE_RELEASE(pD3DDevice_);
+}
+
+
+//シェーダーコンパイル、頂点シェーダーとピクセルシェーダーをセットで渡す
+bool Renderer::CompileShader(const WCHAR* vsPath, const WCHAR* psPath, Shader& outShader)
+{
+    ID3DBlob* vsBlob = nullptr;
+    ID3DBlob* errBlob = nullptr;
+    auto pDevice = GetDevice();
+
+    // シェーダーコンパイル
+    auto hr = D3DCompileFromFile(
+        vsPath,
+        nullptr,
+        D3D_COMPILE_STANDARD_FILE_INCLUDE,
+        "main",
+        "vs_4_0",
+        D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION,
+        0,
+        &vsBlob,
+        &errBlob
+    );
+    if (FAILED(hr)) return false;
+
+    // 頂点シェーダ作成(シェーダオブジェクト作成)
+    ID3D11VertexShader* pVertexShader = nullptr;
+    hr = pDevice->CreateVertexShader(
+        vsBlob->GetBufferPointer(),
+        vsBlob->GetBufferSize(),
+        nullptr,
+        &pVertexShader
+    );
+    if (FAILED(hr)) return false;
+
+    // 入力レイアウトオブジェクト作成
+    ID3D11InputLayout* pInputLayout = nullptr;
+    D3D11_INPUT_ELEMENT_DESC layout[] = {
+        { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
+    };
+    hr = pDevice->CreateInputLayout(
+        layout,
+        _countof(layout),
+        vsBlob->GetBufferPointer(),
+        vsBlob->GetBufferSize(),
+        &pInputLayout
+    );
+    if (FAILED(hr)) return false;
+
+    // ピクセルシェーダー作成
+    ID3DBlob* psBlob = nullptr;
+    hr = D3DCompileFromFile(
+        psPath,
+        nullptr,
+        D3D_COMPILE_STANDARD_FILE_INCLUDE,
+        "main",
+        "ps_4_0",
+        D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION,
+        0,
+        &psBlob,
+        &errBlob
+    );
+
+    ID3D11PixelShader* pPixelShader = nullptr;
+    hr = pDevice->CreatePixelShader(
+        psBlob->GetBufferPointer(),
+        psBlob->GetBufferSize(),
+        nullptr,
+        &pPixelShader
+    );
+    if (FAILED(hr)) return false;
+
+    outShader.pVertexShader = pVertexShader;
+    outShader.pPixelShader = pPixelShader;
+    outShader.pInputLayout = pInputLayout;
+
+    return true;
 }
 

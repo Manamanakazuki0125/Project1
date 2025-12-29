@@ -1,7 +1,9 @@
 #pragma once
+#pragma comment(lib,"d3d11.lib")
+#pragma comment(lib, "d3dcompiler.lib")
 #include "shader.h"
 #include <d3d11.h>
-#pragma comment(lib,"d3d11.lib")
+#include "Triangle.h"
 //マクロ定義
 #define DX_SAFE_RELEASE(x) {if(x) { (x)->Release(); (x) = nullptr; }}
 
@@ -15,6 +17,9 @@ public:
 	bool Initialize(HWND wWindow);
 
 	void Terminate();
+
+	//シェーダーコンパイル、頂点シェーダーとピクセルシェーダーをセットで渡す
+	bool CompileShader(const WCHAR* vsPath, const WCHAR* psPath, Shader& outShader);
 
 	void Draw();
 
@@ -66,5 +71,10 @@ private:
 	UINT    backBufferNum_ = 1;
 	UINT    screenWidth_ = 0;
 	UINT    screenHeight_ = 0;
+
+private:
+	Shader  defaultShader_;
+	Triangle sampleTriangle_;
+
 };
 
