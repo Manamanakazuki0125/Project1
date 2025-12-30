@@ -17,6 +17,10 @@ Triangle::~Triangle()
 //頂点バッファの作成
 bool Triangle::CreateVertexBuffer(Renderer& renderer)
 {
+   
+    OutputDebugStringA(">>> CreateVertexBuffer() が呼ばれたよ <<<\n"); //デバック用の出力
+
+
     D3D11_BUFFER_DESC vertexBufferDesc = {};
     vertexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
     vertexBufferDesc.ByteWidth = sizeof(Vertex) * 3;
@@ -25,14 +29,12 @@ bool Triangle::CreateVertexBuffer(Renderer& renderer)
     D3D11_SUBRESOURCE_DATA vertexSubData;
     vertexSubData.pSysMem = Vertices;
 
-    auto hr = renderer.GetDevice()->CreateBuffer(
+    DX_CALL(renderer.GetDevice()->CreateBuffer(
         &vertexBufferDesc,
         &vertexSubData,
         &VertexBuffer
-    );
-
-    if (FAILED(hr)) return false;
-
+    ), "頂点バッファの作成に失敗しました。");
+    
     return true;
 }
 

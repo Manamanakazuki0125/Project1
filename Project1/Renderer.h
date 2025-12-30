@@ -1,11 +1,10 @@
 #pragma once
-#pragma comment(lib,"d3d11.lib")
+#pragma comment(lib,"d3d11.lib")	
 #pragma comment(lib, "d3dcompiler.lib")
-#include "shader.h"
 #include <d3d11.h>
+#include "shader.h"
 #include "Triangle.h"
-//ƒ}ƒNƒ’è‹`
-#define DX_SAFE_RELEASE(x) {if(x) { (x)->Release(); (x) = nullptr; }}
+
 
 
 class Renderer

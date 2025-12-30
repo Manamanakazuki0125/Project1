@@ -1,7 +1,2 @@
 ﻿  Renderer.cpp
-C:\DX11SideScroleGames\Project1\Project1\Renderer.h(8,9): warning C4005: 'DX_SAFE_RELEASE': マクロが再定義されました。
-  (ソース ファイル '/Renderer.cpp' をコンパイルしています)
-      C:\DX11SideScroleGames\Project1\Project1\pch.h(6,9):
-      'DX_SAFE_RELEASE' の以前の定義を確認してください
-  
   Project1.vcxproj -> C:\DX11SideScroleGames\Project1\x64\Debug\Project1.exe

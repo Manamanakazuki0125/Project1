@@ -30,6 +30,15 @@ bool Renderer::Initialize(HWND hWindow)
 
 	initBackBuffer();
 
+    CompileShader(L"VertexShader.hlsl", L"PixelShader.hlsl", defaultShader_);
+
+    //三角形の初期化
+    sampleTriangle_.CreateVertexBuffer(*this);
+
+
+    
+
+
 	return true;
 }
 
@@ -52,7 +61,7 @@ bool Renderer::initDeviceAndSwapChain(HWND hWindow)
     sd.SampleDesc.Count = 1;            // マルチサンプル（アンチエイリアス）の数
     sd.SampleDesc.Quality = 0;            // マルチサンプル（アンチエイリアス）のクオリティ
     sd.Windowed = TRUE;        // ウィンドウモード（TRUEがウィンドウモード）
-    sd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;        // モード自動切り替え
+    sd.Flags = D3D11_CREATE_DEVICE_DEBUG;        // モード自動切り替え
 
 #if defined(DEBUG) || defined(_DEBUG)
     UINT createDeviceFlags = D3D11_CREATE_DEVICE_DEBUG;
@@ -137,6 +146,7 @@ bool Renderer::initBackBuffer()
 
 void Renderer::Draw()
 {
+
     if (!pImmediateContext_ || !pRenderTargetView_) return;
 
     pImmediateContext_->OMSetRenderTargets(1, &pRenderTargetView_, nullptr);
@@ -188,7 +198,7 @@ bool Renderer::CompileShader(const WCHAR* vsPath, const WCHAR* psPath, Shader& o
     auto pDevice = GetDevice();
 
     // シェーダーコンパイル
-    auto hr = D3DCompileFromFile(
+    DX_CALL(D3DCompileFromFile(
         vsPath,
         nullptr,
         D3D_COMPILE_STANDARD_FILE_INCLUDE,
@@ -198,36 +208,32 @@ bool Renderer::CompileShader(const WCHAR* vsPath, const WCHAR* psPath, Shader& o
         0,
         &vsBlob,
         &errBlob
-    );
-    if (FAILED(hr)) return false;
+    ), "シェーダーコンパイル失敗しているよ");
 
     // 頂点シェーダ作成(シェーダオブジェクト作成)
     ID3D11VertexShader* pVertexShader = nullptr;
-    hr = pDevice->CreateVertexShader(
+    DX_CALL(pDevice->CreateVertexShader(
         vsBlob->GetBufferPointer(),
         vsBlob->GetBufferSize(),
         nullptr,
         &pVertexShader
-    );
-    if (FAILED(hr)) return false;
-
+    ), "頂点シェーダーの作成が失敗しています");
     // 入力レイアウトオブジェクト作成
     ID3D11InputLayout* pInputLayout = nullptr;
     D3D11_INPUT_ELEMENT_DESC layout[] = {
         { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
     };
-    hr = pDevice->CreateInputLayout(
+    DX_CALL(pDevice->CreateInputLayout(
         layout,
         _countof(layout),
         vsBlob->GetBufferPointer(),
         vsBlob->GetBufferSize(),
         &pInputLayout
-    );
-    if (FAILED(hr)) return false;
+    ), "faild to InputLayout()");
 
     // ピクセルシェーダー作成
     ID3DBlob* psBlob = nullptr;
-    hr = D3DCompileFromFile(
+    DX_CALL(D3DCompileFromFile(
         psPath,
         nullptr,
         D3D_COMPILE_STANDARD_FILE_INCLUDE,
@@ -237,16 +243,15 @@ bool Renderer::CompileShader(const WCHAR* vsPath, const WCHAR* psPath, Shader& o
         0,
         &psBlob,
         &errBlob
-    );
+    ), "ピクセルシェーダーのコンパイルに失敗しています");
 
     ID3D11PixelShader* pPixelShader = nullptr;
-    hr = pDevice->CreatePixelShader(
+    DX_CALL(pDevice->CreatePixelShader(
         psBlob->GetBufferPointer(),
         psBlob->GetBufferSize(),
         nullptr,
         &pPixelShader
-    );
-    if (FAILED(hr)) return false;
+    ), "ピクセルシェーダーの作成に失敗しています");
 
     outShader.pVertexShader = pVertexShader;
     outShader.pPixelShader = pPixelShader;
